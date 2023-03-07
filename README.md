@@ -2,7 +2,9 @@
 Some of my dotfiles for MacOS and Linux.
 
 ## How to
-If on mac, delete all .DS_Store files:
+Assuming this repo is placed in the home directory.
+
+If on mac, delete all `.DS_Store` files:
 ```
 find . -name ".DS_Store" -delete
 ```
