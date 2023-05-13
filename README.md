@@ -1,28 +1,37 @@
 # dotfiles
-Some of my dotfiles for MacOS and Linux.
+My dotfiles for MacOS and Linux
 
 ## How to
-Assuming this repo is placed in the home directory.
-
-If on mac, delete all `.DS_Store` files:
+### Repo location
+Place this repo in the home directory:
 ```
-find . -name ".DS_Store" -delete
+cd ~ && git clone https://github.com/mebn/dotfiles.git
 ```
 
-Install `stow`, then run:
+### Stowing and unstowing
+Stow all dotfiles:
 ```
 stow */
 ```
 
-or if you only want a specific config:
+Stow a specific dotfile:
 ```
-stow <folder name>
+stow <folder_name>
 ```
 
-Unstow (delete symlinks) with:
+Unstow all dotfiles:
 ```
 stow -D */
 ```
 
-## Layout
-Name of folder doesn't matter, it's just for humans. Inside a folder we pretend we are in the home directory (eg `/Users/mebn/`). If we want to place config files inside `.config/`, create a `.config/` folder inside current folder.
+Unstow a specific dotfile:
+```
+stow -D <folder_name>
+```
+
+## Folder structure
+The name of folders doesn't matter, it's just for humans.
+Inside a folder we pretend we are in the home directory (eg `/Users/mebn/`).
+
+A dotfile could look like this in the repo: `my_neovim_config/.config/nvim/init.lua`.
+On the machine, it would look like this: `~/.config/nvim/init.lua`, after using `stow my_neovim_config`.
