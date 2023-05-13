@@ -42,7 +42,6 @@ return require('packer').startup(function(use)
     -- (un)comment with gcc, gc, gcip etc
     use 'tpope/vim-commentary'
 
-    -- essential plugins
     use 'tpope/vim-surround'
 end)
 
