@@ -109,15 +109,18 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+
 # paths
 alias cdd="cd ~/Desktop/"
 alias cdm="cd ~/marcus/"
-alias cdmc="cd ~/marcus/code/"
+alias cdmcp="cd ~/marcus/code/private/"
+alias cdmcw="cd ~/marcus/code/work/"
+alias cdmck="cd ~/marcus/code/kth/"
 alias cdmt="cd ~/marcus/temp/"
-alias cdmd="cd ~/marcus/datateknik/"
 alias cdmo="cd ~/marcus/other/"
+alias cdmd="cd ~/marcus/datateknik/"
+alias cdmc="cd ~/marcus/computer_science_master/"
+
 # remove .DS_Store files
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
