@@ -1,5 +1,10 @@
 local o = vim.opt
 local g = vim.g
+local keymap = vim.keymap
+
+
+
+----- OPTIONS -----
 
 -- line numbers
 o.nu = true
@@ -26,6 +31,9 @@ o.splitright = true
 
 o.termguicolors = true
 
+-- leaderkey for keymaps
+g.mapleader = " "
+
 -- clipboard
 -- o.clipboard:append("unnamedplus")
 
@@ -35,3 +43,29 @@ vim.cmd("set statusline+=%F") -- full path
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
+
+
+----- KEYMAPS -----
+
+-- file explorer
+keymap.set("n", "<leader>t", ":Ex<CR>")
+
+-- increment/decrement numbers
+keymap.set("n", "<leader>+", "<C-a>")
+keymap.set("n", "<leader>-", "<C-x>")
+
+-- fzf
+keymap.set("n", "<leader>s", ":Files<CR>")
+keymap.set("n", "<leader>r", ":Rg<CR>")
+
+
+
+----- COLORSCHEME -----
+
+require("tokyonight").setup({
+    style = "night", -- `storm`, `moon`, `night`, `day`
+    transparent = true, -- disable background color
+})
+
+vim.cmd("colorscheme tokyonight")
+vim.cmd("hi! LineNr guifg=#ffffff") -- line number colors
