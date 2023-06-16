@@ -1,13 +1,13 @@
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    
+return require("packer").startup(function(use)
+    use("wbthomason/packer.nvim")
+
     -- colorschemes
-    use 'folke/tokyonight.nvim'
-    
+    use("folke/tokyonight.nvim")
+
     -- fzf
     use { "junegunn/fzf", run = ":call fzf#install()" }
-    use { 'junegunn/fzf.vim' }
-    
+    use { "junegunn/fzf.vim" }
+
     -- autocompletion
 	use("hrsh7th/nvim-cmp") -- completion plugin
 	use("hrsh7th/cmp-buffer") -- source for text in buffer
@@ -26,20 +26,15 @@ return require('packer').startup(function(use)
     use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 
     -- rust
-    use 'simrat39/rust-tools.nvim'
+    use("simrat39/rust-tools.nvim")
 
     -- treesitter configuration
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
-	})
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
     -- git integration
 	use("lewis6991/gitsigns.nvim")
 
     -- (un)comment with gcc, gc, gcip etc
-    use 'tpope/vim-commentary'
+    use("tpope/vim-commentary")
 end)
 
