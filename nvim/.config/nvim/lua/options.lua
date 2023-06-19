@@ -62,6 +62,7 @@ keymap.set("n", "<leader>-", "<C-x>")
 keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
+keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 
 
 ----- COLORSCHEME -----
