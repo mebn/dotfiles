@@ -43,5 +43,8 @@ return require("packer").startup(function(use)
     -- tree
     use("nvim-tree/nvim-web-devicons")
     use("nvim-tree/nvim-tree.lua")
+
+    -- auto close brackets etc
+    use("m4xshen/autoclose.nvim")
 end)
 
