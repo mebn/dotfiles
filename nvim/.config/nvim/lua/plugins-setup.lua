@@ -46,5 +46,7 @@ return require("packer").startup(function(use)
 
     -- auto close brackets etc
     use("m4xshen/autoclose.nvim")
+
+    use("itchyny/vim-gitbranch")
 end)
 

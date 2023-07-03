@@ -34,10 +34,8 @@ o.termguicolors = true
 -- leaderkey for keymaps
 g.mapleader = " "
 
--- clipboard
--- o.clipboard:append("unnamedplus")
-
-vim.cmd("set statusline+=%F") -- full path
+-- statusline
+o.statusline = "%F (%{gitbranch#name()} %{b:gitsigns_status})"
 
 -- disable comment on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
