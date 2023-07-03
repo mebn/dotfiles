@@ -113,13 +113,11 @@ alias v="nvim"
 # paths
 alias cdd="cd ~/Desktop/"
 alias cdm="cd ~/marcus/"
-alias cdmcp="cd ~/marcus/code/private/"
-alias cdmcw="cd ~/marcus/code/work/"
-alias cdmck="cd ~/marcus/code/kth/"
+alias cdmc="cd ~/marcus/code/"
 alias cdmt="cd ~/marcus/temp/"
 alias cdmo="cd ~/marcus/other/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
-alias cdmc="cd ~/marcus/KTH/computer_science/"
+alias cdmcs="cd ~/marcus/KTH/computer_science/"
 
 # remove .DS_Store files
 alias rmds="find . -name \".DS_Store\" -delete"
