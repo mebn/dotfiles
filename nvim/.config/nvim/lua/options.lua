@@ -35,7 +35,8 @@ o.termguicolors = true
 g.mapleader = " "
 
 -- statusline
-o.statusline = "%F (%{gitbranch#name()} %{b:gitsigns_status})"
+-- o.statusline = "%F (%{gitbranch#name()} %{b:gitsigns_status})"
+o.statusline = "%F (%{gitbranch#name()})"
 
 -- disable comment on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
