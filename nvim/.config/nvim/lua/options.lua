@@ -67,7 +67,7 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 ----- COLORSCHEME -----
 
 require("tokyonight").setup({
-    style = "night", -- `storm`, `moon`, `night`, `day`
+    style = "moon", -- `storm`, `moon`, `night`, `day`
     -- transparent = true, -- disable background color
 })
 
