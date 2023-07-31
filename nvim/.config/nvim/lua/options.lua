@@ -69,6 +69,11 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 require("tokyonight").setup({
     style = "night", -- `storm`, `moon`, `night`, `day`
     transparent = true, -- disable background color
+    styles = {
+       sidebars = "transparent",
+       floats = "transparent",
+    }
+
 })
 
 vim.cmd("colorscheme tokyonight")
