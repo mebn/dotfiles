@@ -29,7 +29,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 30
+zstyle ':omz:update' frequency 90
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -71,7 +71,6 @@ zstyle ':omz:update' frequency 30
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    git
     zsh-autosuggestions
 )
 
@@ -106,9 +105,9 @@ source $ZSH/oh-my-zsh.sh
 
 # My aliases
 # neovim
-alias vim="nvim"
-alias vi="nvim"
 alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # paths
 alias cdd="cd ~/Desktop/"
@@ -119,6 +118,21 @@ alias cdmo="cd ~/marcus/other/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
 alias cdmcs="cd ~/marcus/KTH/computer_science/"
 
+# other
+alias c="clear"
+alias z="v ~/.zshrc"
+alias s="source ~/.zshrc"
+alias gs="git status"
+gp() {
+    if [[ -z $1 ]]; then
+        echo "usage: gp some_message"
+    else
+        git add . && git commit -m "$1" && git push
+    fi
+}
+
 # remove .DS_Store files
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
