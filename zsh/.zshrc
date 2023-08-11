@@ -134,5 +134,3 @@ gp() {
 # remove .DS_Store files
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
