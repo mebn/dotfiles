@@ -3,7 +3,6 @@ local g = vim.g
 local keymap = vim.keymap
 
 
-
 ----- OPTIONS -----
 
 -- line numbers
@@ -43,7 +42,6 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 
-
 ----- KEYMAPS -----
 
 -- file explorer
@@ -52,10 +50,6 @@ keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
-
--- fzf
--- keymap.set("n", "<leader>s", ":Files<CR>")
--- keymap.set("n", "<leader>r", ":Rg<CR>")
 
 -- telescope
 keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
