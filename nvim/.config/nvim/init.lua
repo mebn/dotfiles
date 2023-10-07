@@ -49,7 +49,7 @@ require("lazy").setup({
     "simrat39/rust-tools.nvim",
     "lewis6991/gitsigns.nvim",
     "itchyny/vim-gitbranch",
-    "m4xshen/autoclose.nvim",
+    -- "m4xshen/autoclose.nvim",
     "tpope/vim-commentary", -- (un)comment with gcc, gc, gcip etc
 })
 
@@ -61,4 +61,4 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-tree")
-require("plugins.autoclose")
+-- require("plugins.autoclose")
