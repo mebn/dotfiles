@@ -104,10 +104,11 @@ source $ZSH/oh-my-zsh.sh
 
 
 # My aliases
+
 # neovim
 alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+# alias vi="nvim"
+# alias vim="nvim"
 
 # paths
 alias cdd="cd ~/Desktop/"
@@ -123,13 +124,6 @@ alias c="clear"
 alias z="v ~/.zshrc"
 alias s="source ~/.zshrc"
 alias gs="git status"
-gp() {
-    if [[ -z $1 ]]; then
-        echo "usage: gp some_message"
-    else
-        git add . && git commit -m "$1" && git push
-    fi
-}
 
 # remove .DS_Store files
 alias rmds="find . -name \".DS_Store\" -delete"
