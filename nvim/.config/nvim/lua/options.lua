@@ -47,10 +47,6 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- file explorer
 keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 
--- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>")
-keymap.set("n", "<leader>-", "<C-x>")
-
 -- telescope
 keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")

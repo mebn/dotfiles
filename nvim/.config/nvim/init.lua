@@ -1,3 +1,4 @@
+-- auto install lazy on first open
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -13,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
+-- lazy settings
 require("lazy").setup({
     "nvim-lua/plenary.nvim",
 
@@ -38,7 +40,6 @@ require("lazy").setup({
     "williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
     "neovim/nvim-lspconfig", -- easily configure language servers
 
-
     -- treesitter configuration
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
@@ -49,11 +50,10 @@ require("lazy").setup({
     "simrat39/rust-tools.nvim",
     "lewis6991/gitsigns.nvim",
     "itchyny/vim-gitbranch",
-    -- "m4xshen/autoclose.nvim",
     "tpope/vim-commentary", -- (un)comment with gcc, gc, gcip etc
 })
 
-
+-- all other plugin settings
 require("options")
 require("plugins.nvim-cmp")
 require("plugins.mason")
@@ -61,4 +61,3 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-tree")
--- require("plugins.autoclose")
