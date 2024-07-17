@@ -53,6 +53,14 @@ require("lazy").setup({
     "tpope/vim-commentary", -- (un)comment with gcc, gc, gcip etc
 })
 
+-- comments
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "c", "cpp", "java" },
+    callback = function()
+        vim.opt_local.commentstring = "// %s"
+    end
+})
+
 -- all other plugin settings
 require("options")
 require("plugins.nvim-cmp")

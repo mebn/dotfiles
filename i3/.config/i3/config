@@ -14,9 +14,9 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color 48a0ff
 exec --no-startup-id "xautolock -detectsleep -time 10 -locker \"loginctl lock-session\""
-exec --no-startup-id "xautolock -detectsleep -time 20 -locker \"systemctl suspend\""
+exec --no-startup-id "xautolock -detectsleep -time 15 -locker \"systemctl suspend\""
 bindsym $mod+x exec --no-startup-id "loginctl lock-session"
 bindsym $mod+shift+x exec --no-startup-id "systemctl suspend"
 
@@ -73,7 +73,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 # program launcher
-bindsym $mod+d exec --no-startup-id "rofi -dpi 192 -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -dpi 192 -modes drun,window,run -show drun"
+# bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modes "window,run,ssh" -modes combi"
 
 # change focus
 bindsym $mod+h focus left
