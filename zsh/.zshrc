@@ -102,10 +102,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# neovim
+# aliases
+## neovim
 alias v="nvim"
-
-# paths
+## paths
 alias cdd="cd ~/Desktop/"
 alias cdm="cd ~/marcus/"
 alias cdmc="cd ~/marcus/code/"
@@ -113,17 +113,19 @@ alias cdmt="cd ~/marcus/temp/"
 alias cdmo="cd ~/marcus/other/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
 alias cdmcs="cd ~/marcus/KTH/computer_science/"
-
-# other
-alias c="clear"
+## config files
 alias z="v ~/.zshrc"
-alias s="source ~/.zshrc"
+alias zs="source ~/.zshrc"
+## other
+alias c="clear"
 alias gs="git status"
-
-# remove .DS_Store files (MacOS)
+## remove .DS_Store files (MacOS)
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# exports
+## paths
 export PATH=$PATH:$HOME/go/bin
+## editor (make sure nvim is installed, I guess)
+export VISUAL=nvim
+export EDITOR="$VISUAL"
