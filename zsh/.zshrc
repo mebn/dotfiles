@@ -120,8 +120,10 @@ alias z="v ~/.zshrc"
 alias s="source ~/.zshrc"
 alias gs="git status"
 
-# remove .DS_Store files
+# remove .DS_Store files (MacOS)
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$PATH:$HOME/go/bin
