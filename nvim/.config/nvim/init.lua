@@ -22,7 +22,10 @@ require("lazy").setup({
     "folke/tokyonight.nvim",
 
     -- telescope fzf
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make"
+    },
     "nvim-telescope/telescope.nvim",
 
     -- autocompletion
@@ -31,8 +34,6 @@ require("lazy").setup({
     "hrsh7th/cmp-path", -- source for file system paths
     "hrsh7th/cmp-nvim-lsp", -- for autocompletion
     "saadparwaiz1/cmp_luasnip",
-
-    -- snippets
     "L3MON4D3/LuaSnip",
 
     -- managing & installing lsp servers, linters & formatters
@@ -40,8 +41,11 @@ require("lazy").setup({
     "williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
     "neovim/nvim-lspconfig", -- easily configure language servers
 
-    -- treesitter configuration
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    -- treesitter
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
 
     -- tree
     "nvim-tree/nvim-web-devicons",
@@ -58,9 +62,6 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
             "nvim-treesitter/nvim-treesitter",
         },
-        config = function()
-            require("go").setup()
-            end,
         event = {"CmdlineEnter"},
         ft = {"go", 'gomod'},
         build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
@@ -69,28 +70,8 @@ require("lazy").setup({
 
     "lewis6991/gitsigns.nvim",
     "itchyny/vim-gitbranch",
-    "tpope/vim-commentary", -- (un)comment with gcc, gc, gcip etc
+    "tpope/vim-commentary",
 })
-
--- comments
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "java" },
-    callback = function()
-        vim.opt_local.commentstring = "// %s"
-    end
-})
-
--- go
-local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-   require('go.format').goimports()
-  end,
-  group = format_sync_grp,
-})
-
-require('go').setup()
 
 -- all other plugin settings
 require("options")
@@ -100,3 +81,5 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-tree")
+require("plugins.comments")
+require("plugins.go")
