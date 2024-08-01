@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:monospace 8
+font pango:monospace 10
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -32,7 +32,7 @@ exec_always --no-startup-id "setxkbmap -option caps:escape"
 
 # mouse
 ## mouse speed
-exec --no-startup-id "xinput --set-prop 8 309 1"
+exec --no-startup-id "xinput --set-prop 8 'libinput Accel Speed' 1"
 
 # screenshots
 bindsym $mod+shift+a exec --no-startup-id maim "/home/$USER/marcus/screenshots/screenshot_$(date).png"
@@ -73,8 +73,8 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+q kill
 
 # program launcher
-bindsym $mod+d exec --no-startup-id "rofi -dpi 192 -modes drun,window,run -show drun"
-# bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modes "window,run,ssh" -modes combi"
+# bindsym $mod+d exec --no-startup-id "rofi -dpi 192 -modes drun,calc,window,run -show drun"
+bindsym $mod+d exec --no-startup-id "rofi -dpi 192 -show combi -modes combi,calc -combi-modes window,drun,run"
 
 # change focus
 bindsym $mod+h focus left
