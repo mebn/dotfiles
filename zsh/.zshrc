@@ -6,8 +6,17 @@ autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '(%b) '
-PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%} ${vcs_info_msg_0_}$%b '
+
+zstyle ':vcs_info:git:*' formats '%F{red}(%F{green}%b%F{yellow}%m%F{red}) '
+PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}] ${vcs_info_msg_0_}%{$reset_color%}$%b '
+
+# add star next to branch name if there is new changes
+zstyle ':vcs_info:git+set-message:*' hooks git-changes
+function +vi-git-changes() {
+  if [[ -n $(git status --porcelain) ]]; then
+    hook_com[misc]='*'
+  fi
+}
 
 # auto/tab complete
 autoload -U compinit
@@ -31,6 +40,7 @@ alias cdd="cd ~/Desktop/"
 alias cdm="cd ~/marcus/"
 alias cdmc="cd ~/marcus/code/"
 alias cdmt="cd ~/marcus/temp/"
+alias cdms="cd ~/marcus/screenshots/"
 alias cdmo="cd ~/marcus/other/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
 alias cdmcs="cd ~/marcus/KTH/computer_science/"
@@ -49,7 +59,7 @@ alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
 # exports
 ## paths
 export PATH=$PATH:$HOME/go/bin
-## editor (make sure nvim is installed, I guess)
+## default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 

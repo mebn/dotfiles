@@ -35,8 +35,8 @@ exec_always --no-startup-id "setxkbmap -option caps:escape"
 exec --no-startup-id "xinput --set-prop 8 'libinput Accel Speed' 1"
 
 # screenshots
-bindsym $mod+shift+a exec --no-startup-id maim "/home/$USER/marcus/screenshots/screenshot_$(date).png"
-bindsym $mod+shift+s exec --no-startup-id maim --select "/home/$USER/marcus/screenshots/screenshot_$(date).png"
+bindsym $mod+shift+a exec --no-startup-id maim "/home/$USER/marcus/screenshots/screenshot_$(date)_linux.png"
+bindsym $mod+shift+s exec --no-startup-id maim --select "/home/$USER/marcus/screenshots/screenshot_$(date)_linux.png"
 # bindsym $mod+shift+s exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/marcus/screenshots/screenshot_$(date).png"
 
 # clipboard screenshots
