@@ -47,6 +47,7 @@ alias cdmcs="cd ~/marcus/KTH/computer_science/"
 ## config files
 alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
+alias i3c="v ~/.config/i3/config"
 ## other
 alias c="clear"
 alias ls="ls --color"
@@ -64,10 +65,10 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # plugins
-install_and_load_plugin() {
+load_plugin() {
     local repo_url="https://github.com/$1"
-    local path="$HOME/.zsh/$2"
-    local file="$3"
+    local path="$HOME/.zsh/${repo_url##*/}"
+    local file="$2"
 
     if ! [ -f "$path/$file" ]; then
         /usr/bin/git clone "$repo_url" "$path"
@@ -76,6 +77,5 @@ install_and_load_plugin() {
     source "$path/$file"
 }
 
-install_and_load_plugin "zsh-users/zsh-syntax-highlighting" "zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
-
-install_and_load_plugin "zsh-users/zsh-autosuggestions" "zsh-autosuggestions" "zsh-autosuggestions.zsh"
+load_plugin "zsh-users/zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
+load_plugin "zsh-users/zsh-autosuggestions" "zsh-autosuggestions.zsh"
