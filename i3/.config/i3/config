@@ -14,16 +14,10 @@ exec --no-startup-id "xautolock -detectsleep -time 15 -locker \"systemctl suspen
 bindsym $mod+x exec --no-startup-id "loginctl lock-session"
 bindsym $mod+shift+x exec --no-startup-id "systemctl suspend"
 
-# NetworkManager
-exec --no-startup-id nm-applet
-
-# bluetooth manager
-exec --no-startup-id blueman-applet
-
-# picom (compositor)
-exec --no-startup-id picom -b
-
-# syncthing
+# start programs
+exec --no-startup-id "nm-applet"
+exec --no-startup-id "blueman-applet"
+exec --no-startup-id "picom -b"
 exec --no-startup-id "syncthing --no-browser"
 
 # keyboard
@@ -44,20 +38,27 @@ bindsym $mod+ctrl+a exec --no-startup-id maim | xclip -selection clipboard -t im
 bindsym $mod+ctrl+s exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 # bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
-# TODO: mic
-
 # background
 exec --no-startup-id "nitrogen --set-auto ~/marcus/media/backgrounds/outset\ island/Outset\ Island\ night.jpg"
 
-# Use pactl to adjust volume in PulseAudio.
+# media and volume keys
 set $refresh_i3status killall -SIGUSR1 i3status
+## volume +-5%
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+
+## volume +-1%
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +1% && $refresh_i3status
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -1% && $refresh_i3status
+
+## mute
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause && $refresh_i3status
-bindsym XF86AudioNext exec --no-startup-id playerctl next && $refresh_i3status
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous && $refresh_i3status
+
+## media keys
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
