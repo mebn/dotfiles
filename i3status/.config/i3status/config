@@ -2,6 +2,7 @@
 
 general {
         colors = true
+        markup = pango
         interval = 5
 }
 
@@ -49,7 +50,8 @@ tztime local {
 }
 
 volume master {
-        format = "Vol: %volume"
+        format = "<span color='#ffff00'>Vol: %volume</span>"
+        # format = "Vol: %volume"
         format_muted = "Vol: muted (%volume)"
         device = "default"
         mixer = "Master"

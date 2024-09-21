@@ -2,6 +2,10 @@ set $mod Mod4
 
 font pango:monospace 10
 
+# keyboard and mouse
+exec_always --no-startup-id "setxkbmap -layout se -option caps:escape"
+exec_always --no-startup-id "xinput --set-prop 8 'libinput Accel Speed' 1"
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex-autostart --autostart --environment i3
@@ -20,18 +24,11 @@ exec --no-startup-id "blueman-applet"
 exec --no-startup-id "picom -b"
 exec --no-startup-id "syncthing --no-browser"
 
-# keyboard
-exec_always --no-startup-id "setxkbmap -layout se"
-exec_always --no-startup-id "setxkbmap -option caps:escape"
-
-# mouse
-## mouse speed
-exec --no-startup-id "xinput --set-prop 8 'libinput Accel Speed' 1"
-
 # screenshots
-bindsym $mod+shift+a exec --no-startup-id maim "/home/$USER/marcus/screenshots/screenshot_$(date)_linux.png"
-bindsym $mod+shift+s exec --no-startup-id maim --select "/home/$USER/marcus/screenshots/screenshot_$(date)_linux.png"
-# bindsym $mod+shift+s exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/marcus/screenshots/screenshot_$(date).png"
+set $screenshot_path "$HOME/marcus/screenshots/screenshot_$(date)_linux.png"
+bindsym $mod+shift+a exec --no-startup-id maim $screenshot_path
+bindsym $mod+shift+s exec --no-startup-id maim --select $screenshot_path
+# bindsym $mod+s exec --no-startup-id maim --window $(xdotool getactivewindow) $screenshot_path
 
 # clipboard screenshots
 bindsym $mod+ctrl+a exec --no-startup-id maim | xclip -selection clipboard -t image/png
