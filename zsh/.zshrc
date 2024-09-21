@@ -8,7 +8,7 @@ precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
 zstyle ':vcs_info:git:*' formats '%F{red}(%F{green}%b%F{yellow}%m%F{red}) '
-PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}] ${vcs_info_msg_0_}%{$reset_color%}$%b '
+PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%2~%{$fg[red]%}] ${vcs_info_msg_0_}%{$reset_color%}$%b '
 
 # add star next to branch name if there is new changes
 zstyle ':vcs_info:git+set-message:*' hooks git-changes
