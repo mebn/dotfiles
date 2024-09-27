@@ -63,6 +63,8 @@ export PATH=$PATH:$HOME/go/bin
 ## default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+## homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # plugins
 load_plugin() {

@@ -43,5 +43,31 @@ cmp.setup({
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
     }),
+    window = {
+        completion = {
+            border = 'rounded' -- or 'single', 'double', 'shadow', etc.
+        },
+        documentation = {
+            border = 'rounded' -- or 'single', 'double', 'shadow', etc.
+        }
+    },
 })
 
+local border = {
+    {"╭", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"╮", "FloatBorder"},
+    {"│", "FloatBorder"},
+    {"╯", "FloatBorder"},
+    {"─", "FloatBorder"},
+    {"╰", "FloatBorder"},
+    {"│", "FloatBorder"}
+}
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = border
+})
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = border
+})
