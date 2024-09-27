@@ -41,6 +41,9 @@ o.statusline = "%F (%{gitbranch#name()})"
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
+-- clipboard
+vim.opt.clipboard = "unnamedplus"
+
 
 ----- KEYMAPS -----
 
@@ -50,6 +53,7 @@ keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 -- telescope
 keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
+keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 
@@ -58,12 +62,8 @@ keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 
 require("tokyonight").setup({
     style = "night", -- `storm`, `moon`, `night`, `day`
-    -- transparent = true, -- disable background color
-    -- styles = {
-    --    sidebars = "transparent",
-    --    floats = "transparent",
-    -- }
 })
 
 vim.cmd("colorscheme tokyonight")
-vim.cmd("hi! LineNr guifg=#ffffff") -- line number colors
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff" })
