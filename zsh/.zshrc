@@ -3,20 +3,18 @@ autoload -U colors && colors
 
 # git
 autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
+precmd_functions+=( vcs_info )
 setopt prompt_subst
-
-zstyle ':vcs_info:git:*' formats '%F{red}(%F{green}%b%F{yellow}%m%F{red}) '
-PROMPT='%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%2~%{$fg[red]%}] ${vcs_info_msg_0_}%{$reset_color%}$%b '
 
 # add star next to branch name if there is new changes
 zstyle ':vcs_info:git+set-message:*' hooks git-changes
 function +vi-git-changes() {
-  if [[ -n $(git status --porcelain) ]]; then
-    hook_com[misc]='*'
-  fi
+    [[ -n $(git status --porcelain) ]] && hook_com[misc]='*'
 }
+
+zstyle ':vcs_info:git:*' formats '%F{yellow}%b%F{red}%m '
+
+PROMPT='%B%F{green}%n@%M %F{magenta}%2~ ${vcs_info_msg_0_}%f%b$ '
 
 # auto/tab complete
 autoload -U compinit
