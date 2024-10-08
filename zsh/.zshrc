@@ -30,10 +30,6 @@ SAVEHIST=10000
 setopt HIST_IGNORE_ALL_DUPS
 
 # aliases
-## neovim
-alias v="nvim"
-## git
-alias gs="git status"
 ## paths
 alias cdd="cd ~/Desktop/"
 alias cdm="cd ~/marcus/"
@@ -43,6 +39,13 @@ alias cdms="cd ~/marcus/screenshots/"
 alias cdmo="cd ~/marcus/other/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
 alias cdmcs="cd ~/marcus/KTH/computer_science/"
+## neovim
+alias v="nvim"
+## git
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
 ## config files
 alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
