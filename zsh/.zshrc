@@ -15,6 +15,7 @@ function +vi-git-changes() {
 zstyle ':vcs_info:git:*' formats '%F{yellow}%b%F{red}%m '
 
 PROMPT='%B%F{green}%n@%M %F{magenta}%2~ ${vcs_info_msg_0_}%f%b$ '
+PROMPT='%B%F{green}%n %F{magenta}%2~ ${vcs_info_msg_0_}%f%b$ '
 
 # auto/tab complete
 autoload -U compinit
