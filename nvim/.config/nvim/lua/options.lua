@@ -2,7 +2,6 @@ local o = vim.opt
 local g = vim.g
 local keymap = vim.keymap
 
-
 ----- OPTIONS -----
 
 -- line numbers
@@ -44,7 +43,6 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
 
-
 ----- KEYMAPS -----
 
 -- file explorer
@@ -57,11 +55,10 @@ keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 
-
 ----- COLORSCHEME -----
 
 require("tokyonight").setup({
-    style = "night", -- `storm`, `moon`, `night`, `day`
+	style = "night", -- `storm`, `moon`, `night`, `day`
 })
 
 vim.cmd("colorscheme tokyonight")
