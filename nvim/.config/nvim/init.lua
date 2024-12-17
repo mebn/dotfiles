@@ -36,8 +36,6 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip",
 	"L3MON4D3/LuaSnip",
 
-	"stevearc/conform.nvim",
-
 	-- managing and installing lsp servers, linters & formatters
 	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
@@ -70,4 +68,4 @@ require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-tree")
 require("plugins.comments")
-require("plugins.conform")
+require("plugins.formatter")
