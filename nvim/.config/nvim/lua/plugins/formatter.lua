@@ -1,18 +1,16 @@
 local formatters_by_filetype = {
-	rust = { "rustfmt" },
-	go = { "gofmt" },
-	lua = { "stylua" },
-	python = { "black" },
-	clojure = { "cljfmt" },
-	clojurescript = { "cljfmt" },
-	css = { "prettier" },
-	html = { "prettier" },
-	javascript = { "prettier" },
-	javascriptreact = { "prettier" },
-	markdown = { "prettier" },
-	typescript = { "prettier" },
-	typescriptreact = { "prettier" },
-	json = { "prettier" },
+	rust = "rustfmt %",
+	go = "gofmt -w %",
+	lua = "stylua %",
+	python = "black %",
+	css = "prettier --write %",
+	html = "prettier --write %",
+	javascript = "prettier --write %",
+	javascriptreact = "prettier --write %",
+	markdown = "prettier --write %",
+	typescript = "prettier --write %",
+	typescriptreact = "prettier --write %",
+	json = "prettier --write %",
 }
 
 -- run foramtter on save
@@ -20,9 +18,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*",
 	callback = function()
 		local ft = vim.bo.filetype
-		local formatter = formatters_by_filetype[ft]
-		if formatter then
-			local cmd = table.concat(formatter, " ") .. " %"
+		local cmd = formatters_by_filetype[ft]
+		if cmd then
 			vim.cmd("silent! !" .. cmd)
 			vim.cmd("edit")
 		else
