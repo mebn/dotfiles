@@ -1,3 +1,6 @@
+local should_format = true
+-- local should_format = false
+
 local formatters_by_filetype = {
 	rust = "rustfmt %",
 	go = "gofmt -w %",
@@ -17,6 +20,10 @@ local formatters_by_filetype = {
 vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = "*",
 	callback = function()
+		if not should_format then
+			return
+		end
+
 		local ft = vim.bo.filetype
 		local cmd = formatters_by_filetype[ft]
 		if cmd then
