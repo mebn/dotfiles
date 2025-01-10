@@ -1,40 +1,37 @@
-local o = vim.opt
-local g = vim.g
-local keymap = vim.keymap
-
 ----- OPTIONS -----
 
 -- line numbers
-o.nu = true
-o.relativenumber = true
+
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
 -- tabs and indent
-o.tabstop = 4
-o.softtabstop = 4
-o.shiftwidth = 4
-o.expandtab = true
-o.smarttab = true
-o.smartindent = true
-o.autoindent = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smarttab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 -- search
-o.ignorecase = true
-o.hlsearch = true
-o.incsearch = true
-o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
+vim.opt.smartcase = true
 
 -- split windows
-o.splitbelow = true
-o.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
-o.termguicolors = true
+vim.opt.termguicolors = true
 
 -- leaderkey for keymaps
-g.mapleader = " "
+vim.g.mapleader = " "
 
 -- statusline
--- o.statusline = "%F (%{gitbranch#name()} %{b:gitsigns_status})"
-o.statusline = "%F (%{gitbranch#name()})"
+-- vim.opt.statusline = "%F (%{gitbranch#name()} %{b:gitsigns_status})"
+vim.opt.statusline = "%F (%{gitbranch#name()})"
 
 -- disable comment on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
@@ -43,24 +40,36 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
 
------ KEYMAPS -----
+-- Automatically reload file when changed outside of Neovim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	pattern = "*",
+	command = "silent! checktime",
+})
+
+----- KEY MAPS -----
 
 -- file explorer
-keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 
 -- telescope
-keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
-keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
-keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
-keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
-keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
+vim.keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
+vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
+vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
 
------ COLORSCHEME -----
+----- spell check -----
+
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
+-- z= (bring up suggested words)
+-- zg (add word to wordlist)
+
+----- COLOR SCHEME -----
 
 require("tokyonight").setup({
 	style = "night", -- `storm`, `moon`, `night`, `day`
 })
 
-vim.cmd("colorscheme tokyonight")
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#ffffff" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffffff" })
+vim.cmd.colorscheme("tokyonight")

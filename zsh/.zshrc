@@ -38,6 +38,7 @@ alias cdmc="cd ~/marcus/code/"
 alias cdmt="cd ~/marcus/temp/"
 alias cdms="cd ~/marcus/screenshots/"
 alias cdmo="cd ~/marcus/other/"
+alias cdmn="cd ~/marcus/notes/"
 alias cdmd="cd ~/marcus/KTH/datateknik/"
 alias cdmcs="cd ~/marcus/KTH/computer_science/"
 ## neovim
@@ -51,6 +52,23 @@ alias gp="git push"
 alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
 alias i3c="v ~/.config/i3/config"
+## notes
+n() {
+    NOTES_PATH="$HOME/marcus/notes"
+    PREV_PATH=$(pwd)
+
+    if [ $# -eq 0 ]; then
+        # No arguments, open the path
+        cd "$NOTES_PATH" && v .
+    else
+        # Ensure the directory exists and open the file
+        FILE_PATH="$NOTES_PATH/$1"
+        mkdir -p "$(dirname "$FILE_PATH")"
+        cd "$NOTES_PATH" && v "$1"
+    fi
+
+    cd "$PREV_PATH"
+}
 ## other
 alias c="clear"
 alias ls="ls --color"

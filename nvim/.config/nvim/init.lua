@@ -57,6 +57,18 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 	"itchyny/vim-gitbranch",
 	"tpope/vim-commentary",
+
+	"mg979/vim-visual-multi",
+
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function()
+			vim.cmd([[Lazy load markdown-preview.nvim]])
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 })
 
 -- all other plugin settings
