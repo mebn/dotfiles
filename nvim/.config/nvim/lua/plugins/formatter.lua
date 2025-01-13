@@ -27,11 +27,10 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		local ft = vim.bo.filetype
 		local cmd = formatters_by_filetype[ft]
 		if cmd then
-			-- Safely execute the command
 			vim.cmd("silent! !" .. cmd)
 			vim.cmd("edit")
-		else
-			vim.notify("No formatter configured for " .. ft, vim.log.levels.WARN)
+			-- else
+			-- 	vim.notify("No formatter configured for " .. ft, vim.log.levels.WARN)
 		end
 	end,
 	desc = "Auto-format file before saving",
