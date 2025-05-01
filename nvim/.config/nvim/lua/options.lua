@@ -54,6 +54,7 @@ vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 
 -- telescope
 vim.keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
@@ -66,6 +67,11 @@ vim.opt.spell = true
 -- z= (bring up suggested words)
 -- zg (add word to wordlist)
 
+----- netrw -----
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 ----- COLOR SCHEME -----
 
 require("tokyonight").setup({
@@ -73,3 +79,6 @@ require("tokyonight").setup({
 })
 
 vim.cmd.colorscheme("tokyonight")
+
+----- markdown preview -----
+vim.g.mkdp_theme = "light"

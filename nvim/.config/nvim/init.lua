@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -14,18 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
--- lazy settings
 require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	-- colorschemes
 	"folke/tokyonight.nvim",
 
-	-- telescope fzf
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-	},
+	-- telescope, fzf
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	"nvim-telescope/telescope.nvim",
 
 	-- autocompletion
@@ -36,10 +32,12 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip",
 	"L3MON4D3/LuaSnip",
 
-	-- managing and installing lsp servers, linters & formatters
 	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
 	"neovim/nvim-lspconfig", -- easily configure language servers
+
+	-- rust
+	"simrat39/rust-tools.nvim",
 
 	-- treesitter
 	{
@@ -48,16 +46,11 @@ require("lazy").setup({
 	},
 
 	-- tree
-	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
-
-	-- rust
-	"simrat39/rust-tools.nvim",
 
 	"lewis6991/gitsigns.nvim",
 	"itchyny/vim-gitbranch",
 	"tpope/vim-commentary",
-
 	"mg979/vim-visual-multi",
 
 	{
