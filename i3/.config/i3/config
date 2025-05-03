@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:monospace 10
+font pango:JetBrainsMono 10
 
 # keyboard and mouse
 exec_always --no-startup-id "setxkbmap -layout se -option caps:escape"
@@ -13,8 +13,8 @@ exec --no-startup-id dex-autostart --autostart --environment i3
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color 285577
-exec --no-startup-id "xautolock -detectsleep -time 10 -locker \"loginctl lock-session\""
-exec --no-startup-id "xautolock -detectsleep -time 15 -locker \"systemctl suspend\""
+# exec --no-startup-id "xautolock -detectsleep -time 10 -locker \"loginctl lock-session\""
+# exec --no-startup-id "xautolock -detectsleep -time 15 -locker \"systemctl suspend\""
 bindsym $mod+x exec --no-startup-id "loginctl lock-session"
 bindsym $mod+shift+x exec --no-startup-id "systemctl suspend"
 
@@ -64,8 +64,9 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+# start programs
+bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Shift+Return exec --no-startup-id dolphin
 
 # kill focused window
 bindsym $mod+q kill
@@ -152,7 +153,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
+#"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

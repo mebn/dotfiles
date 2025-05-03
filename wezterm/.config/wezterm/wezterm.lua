@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 18
+config.font_size = 10
 -- config.line_height = 1.2
 
 config.colors = {
