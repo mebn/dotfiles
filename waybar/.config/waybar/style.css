@@ -1,0 +1,29 @@
+window#waybar{
+    all:unset;
+}
+
+#workspaces, #network, #pulseaudio, #tray, #clock {
+    font-size: 14px;
+    font-family: 'JetBrains Mono Nerd Font';
+    color: white;
+    padding: 0px 10px;
+    margin: 4px 10px;
+    border-radius: 100px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#workspaces {
+    padding: 0;
+}
+
+#workspaces button {
+    all:unset;
+    margin: 4px;
+    padding: 0px 15px;
+    border-radius: 100px;
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.8);
+    color: black;
+}
