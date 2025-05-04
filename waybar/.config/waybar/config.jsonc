@@ -1,9 +1,9 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "spacing": 4, // Gaps between modules (4px)
+    "layer": "top",
+    "position": "top",
     "modules-left": [
         "hyprland/workspaces"
+        // "hyprland/window"
         // "hyprland/mode",
         // "hyprland/scratchpad",
         // "custom/media"
@@ -24,9 +24,9 @@
         // "battery",
         // "battery#bat2",
         // "custom/power"
-        "network",
+        "tray",
         "pulseaudio",
-        "tray"
+        "network"
     ],
     // Modules configuration
     // "sway/workspaces": {
@@ -167,13 +167,12 @@
         "format-disconnected": "Disconnected ⚠"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        // "format-muted": " {format_source}", // add {format_source} to show
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

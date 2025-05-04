@@ -1,29 +1,33 @@
-window#waybar{
-    all:unset;
+#waybar{
+    background: rgba(255, 255, 255, 0.0);
 }
 
 #workspaces, #network, #pulseaudio, #tray, #clock {
     font-size: 14px;
     font-family: 'JetBrains Mono Nerd Font';
-    color: white;
-    padding: 0px 10px;
-    margin: 4px 10px;
+    color: black;
+    padding: 0px 12px;
+    margin: 4px 12px 4px 0px;
     border-radius: 100px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 #workspaces {
     padding: 0;
+    margin-left: 12px;
 }
 
 #workspaces button {
     all:unset;
-    margin: 4px;
-    padding: 0px 15px;
+    margin: 3px 4px;
+    padding: 0px 12px;
     border-radius: 100px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 #workspaces button.active {
-    background: rgba(255, 255, 255, 0.8);
-    color: black;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0px 12px;
 }
+
