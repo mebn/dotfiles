@@ -6,6 +6,8 @@ local formatters_by_filetype = {
 	go = 'gofmt -w "%:p"',
 	lua = 'stylua "%:p"',
 	python = 'black "%:p"',
+
+	-- prettier
 	css = 'prettier --write "%:p"',
 	html = 'prettier --write "%:p"',
 	javascript = 'prettier --write "%:p"',

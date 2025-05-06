@@ -31,3 +31,15 @@
     padding: 0px 12px;
 }
 
+#workspaces button.urgent {
+    background: rgba(255, 0, 0, 0.6);
+}
+
+/* #workspaces button.focused { */
+/*     background: yellow; */
+/* } */
+
+/* #workspaces button.visible { */
+/*     background: orange; */
+/* } */
+

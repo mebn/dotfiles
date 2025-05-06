@@ -34,8 +34,9 @@ vim.g.mapleader = " "
 vim.opt.statusline = "%F (%{gitbranch#name()})"
 
 -- disable comment on new line
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+vim.opt.formatoptions:remove { "c", "r", "o" }
+-- vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+-- vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- clipboard
 vim.opt.clipboard = "unnamedplus"
