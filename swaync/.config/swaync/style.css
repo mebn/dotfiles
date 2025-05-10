@@ -1,0 +1,69 @@
+.control-center {
+  border-radius: 10px;
+  margin: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 12px;
+  font-family: "JetBrains Mono Nerd Font";
+}
+
+.widget-title label {
+  color: black;
+}
+
+.widget-title button {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.widget-title button label {
+  color: black;
+}
+
+.widget-title button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.widget-title button:hover label {
+  color: white;
+}
+
+/* DND */
+
+.widget-dnd label {
+  color: black;
+}
+
+.widget-dnd slider {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  box-shadow: none;
+  border-radius: 100px;
+}
+
+.widget-dnd switch {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  box-shadow: none;
+  border-radius: 100px;
+}
+
+.widget-dnd switch:checked {
+  background-color: rgba(0, 0, 255, 0.6);
+}
+
+.widget-notifications label {
+  color: red;
+}
+
+/* .notification-row { */
+/*   margin: 0; */
+/*   padding: 0; */
+/* } */
+
+.notification {
+  background: green;
+  box-shadow: none;
+  border: none;
+  border-radius: 10px;
+}
