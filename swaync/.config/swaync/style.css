@@ -1,7 +1,8 @@
 .control-center {
   border-radius: 10px;
   margin: 12px;
-  background: rgba(255, 255, 255, 0.8);
+  /* background: rgba(255, 255, 255, 0.8); */
+  background: #d0c6b9;
   color: black;
   padding: 12px;
   font-family: "JetBrains Mono Nerd Font";
@@ -62,7 +63,7 @@
 /* } */
 
 .notification {
-  background: green;
+  background: #57bb85;
   box-shadow: none;
   border: none;
   border-radius: 10px;

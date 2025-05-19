@@ -1,0 +1,59 @@
+/* Waybar */
+
+#waybar {
+  background: #d0c6b9;
+}
+
+/* All objects */
+
+#workspaces,
+#network,
+#pulseaudio,
+#tray,
+#clock {
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font";
+  font-weight: bold;
+  padding: 0px 12px;
+  margin: 0;
+  /* margin: 0px 12px 0px 0px; */
+}
+
+#clock {
+  color: #9999ff;
+}
+
+#network {
+  color: #ff9aff;
+}
+
+#pulseaudio {
+  color: #e7a257;
+}
+
+/* Workspaces */
+
+#workspaces {
+  padding: 0;
+  margin-left: 4;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 0px 8px;
+  border: none;
+  font-style: italic;
+  color: #d0c6b9;
+}
+
+#workspaces button.active {
+  color: #57bb85;
+}
+
+#workspaces button:hover {
+  color: white;
+}
+
+#workspaces button.urgent {
+  color: #f76a93;
+}

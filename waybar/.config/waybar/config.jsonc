@@ -108,7 +108,7 @@
         // }
     },
     "clock": {
-        "format": "{:%A %d/%m %B | %H:%M}",
+        "format": "{:%A %d/%m %B - %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
