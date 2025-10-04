@@ -56,6 +56,10 @@ alias c="clear"
 alias ls="ls --color"
 alias l="ls -la --color"
 alias cwd="pwd | tr -d '\n' | xclip -selection clipboard"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias open="xdg-open"
+fi
+alias feh="feh --scale-down"
 ## remove .DS_Store files (MacOS)
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"

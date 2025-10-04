@@ -6,7 +6,6 @@
         // "hyprland/window"
         // "hyprland/mode",
         // "hyprland/scratchpad",
-        // "custom/media"
     ],
     "modules-center": [
         ""
@@ -25,7 +24,9 @@
         // "battery#bat2",
         // "custom/power"
         "tray",
+        // "custom/media",
         "pulseaudio",
+        "custom/airpods",
         "network",
         "clock"
     ],
@@ -46,6 +47,13 @@
     //         "default": ""
     //     }
     // },
+    "custom/airpods": {
+        "format": "AirPods",
+        "tooltip": "Click to toggle AirPods",
+        "exec": "echo 'AirPods'",  // optional static text
+        "interval": 600,
+        "on-click": "$HOME/.config/waybar/airpods.sh"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -108,7 +116,7 @@
         // }
     },
     "clock": {
-        "format": "{:%A %d/%m %B - %H:%M}",
+        "format": "{:%A %d/%m %B %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
@@ -162,15 +170,18 @@
     },
     "network": {
         "family": "ipv4",
-        "format-wifi": "{essid} ({signalStrength}%) {ipaddr} ",
-        "format-ethernet": "{ipaddr} ",
-        "format-disconnected": "Disconnected ⚠"
+        "format-wifi": "{essid} ({signalStrength}%) {ipaddr}",
+        "format-ethernet": "{ipaddr}",
+        "format-disconnected": "-",
+        "tooltip-format-wifi": "Wi-Fi",
+        "tooltip-format-ethernet": "Ethernet",
+        "tooltip-format-disconnected": "No connection"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} ",
-        "format-bluetooth-muted": "Mute ({volume}%) {icon} ",
-        "format-muted": "Mute ({volume}%) {format_source}", // add {format_source} to show
+        "format-bluetooth-muted": "(Mute) {volume}% {icon} ",
+        "format-muted": "(Mute) {volume}% {icon}", // add {format_source} to show
         // "format-source": "{volume}% ",
         // "format-source-muted": "",
         "format-icons": {
