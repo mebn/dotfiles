@@ -36,8 +36,11 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
 	"neovim/nvim-lspconfig", -- easily configure language servers
 
-	-- rust
-	"simrat39/rust-tools.nvim",
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^6",
+		lazy = false,
+	},
 
 	-- treesitter
 	{

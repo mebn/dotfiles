@@ -2,12 +2,8 @@ local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
-local rust_tools = require("rust-tools")
 
 mason.setup()
-mason_lspconfig.setup({
-	automatic_installation = true,
-})
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
@@ -41,23 +37,11 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 end
 
--- used to enable autocompletion (assign to every lsp server config)
-local capabilities = cmp_nvim_lsp.default_capabilities()
-
--- auto handle lspservers
-mason_lspconfig.setup_handlers({
-	function(server)
-		lspconfig[server].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
-	end,
-	["rust_analyzer"] = function()
-		rust_tools.setup({
-			server = {
-				on_attach = on_attach,
-				capabilities = capabilities,
-			},
-		})
-	end,
+mason_lspconfig.setup({
+	automatic_installation = true,
+	automatic_enable = {
+		exclude = {
+			"rust_analyzer",
+		},
+	},
 })
