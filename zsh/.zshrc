@@ -37,7 +37,9 @@ alias cdmc="cd ~/marcus/code/"
 alias cdmt="cd ~/marcus/temp/"
 alias cdms="cd ~/marcus/screenshots/"
 alias cdmo="cd ~/marcus/other/"
-alias cdmn="cd ~/marcus/notes/"
+## notes
+alias notes="v ~/marcus/notes/"
+alias n=notes
 ## neovim
 alias v="nvim"
 ## git
@@ -48,9 +50,6 @@ alias gp="git push"
 ## config files
 alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
-## notes
-alias notes="v ~/marcus/notes/"
-alias n=notes
 ## other
 alias c="clear"
 alias ls="ls --color"
@@ -85,3 +84,12 @@ load_plugin() {
 
 load_plugin "zsh-users/zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
 load_plugin "zsh-users/zsh-autosuggestions" "zsh-autosuggestions.zsh"
+
+# bun completions
+[ -s "/Users/mebn/.bun/_bun" ] && source "/Users/mebn/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="/Users/mebn/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/mebn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
