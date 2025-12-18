@@ -1,4 +1,6 @@
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.setup({
   pickers = {
     find_files = {
       hidden = true,
@@ -6,4 +8,4 @@ require("telescope").setup({
   },
 })
 
-require("telescope").load_extension("fzf")
+telescope.load_extension("fzf")

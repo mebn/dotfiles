@@ -20,6 +20,7 @@ local formatters_by_filetype = {
 
 -- run formatter on save
 vim.api.nvim_create_autocmd("BufWritePost", {
+	desc = "Auto-format file before saving",
 	pattern = "*",
 	callback = function()
 		if not should_format then
@@ -31,9 +32,6 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 		if cmd then
 			vim.cmd("silent! !" .. cmd)
 			vim.cmd("edit")
-			-- else
-			-- 	vim.notify("No formatter configured for " .. ft, vim.log.levels.WARN)
 		end
 	end,
-	desc = "Auto-format file before saving",
 })

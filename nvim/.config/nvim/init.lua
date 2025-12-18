@@ -12,15 +12,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-
 require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	-- colorschemes
 	"folke/tokyonight.nvim",
 
-	-- telescope, fzf
+	-- telescope
 	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	"nvim-telescope/telescope.nvim",
 
@@ -32,14 +30,12 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip",
 	"L3MON4D3/LuaSnip",
 
-	"williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
-	"williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
-	"neovim/nvim-lspconfig", -- easily configure language servers
-
 	{
-		"mrcjkb/rustaceanvim",
-		version = "^6",
-		lazy = false,
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+		},
 	},
 
 	-- treesitter
@@ -48,27 +44,18 @@ require("lazy").setup({
 		build = ":TSUpdate",
 	},
 
-	-- tree
 	"nvim-tree/nvim-tree.lua",
 
 	"lewis6991/gitsigns.nvim",
 	"itchyny/vim-gitbranch",
 	"tpope/vim-commentary",
 	"mg979/vim-visual-multi",
-
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.cmd([[Lazy load markdown-preview.nvim]])
-			vim.fn["mkdp#util#install"]()
-		end,
-	},
+	"simrat39/rust-tools.nvim",
 })
 
--- all other plugin settings
 require("options")
+require("keymaps")
+require("plugins.colorscheme")
 require("plugins.nvim-cmp")
 require("plugins.mason")
 require("plugins.telescope")
