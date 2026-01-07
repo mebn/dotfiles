@@ -100,7 +100,15 @@ export PATH="/Users/mebn/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/Users/mebn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 eval "$(/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
 # opencode
 export PATH=/home/marnil9/.opencode/bin:$PATH
+
+# sail
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/mebn/.antigravity/antigravity/bin:$PATH"
+
+. "$HOME/.local/bin/env"
