@@ -3,8 +3,9 @@ vim.keymap.set("n", "<leader>t", "<cmd>NvimTreeToggle<CR>")
 
 -- telescope
 vim.keymap.set("n", "<leader>s", "<cmd>Telescope find_files<CR>")
-vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>")
+vim.keymap.set("n", "<leader>d", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<leader>r", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "<leader>f", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 vim.keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
