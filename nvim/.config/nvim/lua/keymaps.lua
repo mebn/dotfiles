@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
 vim.keymap.set("n", "<leader>E", "<cmd>Telescope diagnostics<CR>")
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<CR>")
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<CR>")
+vim.keymap.set("n", "<leader>gl", "<cmd>Telescope git_commits<CR>")
 
 -- vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts)
 -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
