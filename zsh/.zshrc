@@ -93,3 +93,9 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/Users/mebn/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/Users/mebn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+eval "$(/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+# opencode
+export PATH=/home/marnil9/.opencode/bin:$PATH
