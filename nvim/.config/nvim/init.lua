@@ -38,6 +38,11 @@ require("lazy").setup({
 		},
 	},
 
+	{
+		"stevearc/conform.nvim",
+		opts = {},
+	},
+
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -58,9 +63,9 @@ require("keymaps")
 require("plugins.colorscheme")
 require("plugins.nvim-cmp")
 require("plugins.mason")
+require("plugins.conform")
 require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.gitsigns")
 require("plugins.nvim-tree")
 require("plugins.comments")
-require("plugins.formatter")
