@@ -11,6 +11,7 @@ require("conform").setup({
 
 		javascript = { "prettier" },
 		typescript = { "prettier" },
+		vue = { "prettier" },
 		html = { "prettier" },
 		css = { "prettier" },
 		json = { "prettier" },
