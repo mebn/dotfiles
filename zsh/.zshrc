@@ -109,4 +109,9 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 # Added by Antigravity
 export PATH="/Users/mebn/.antigravity/antigravity/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+# Only add Homebrew to PATH if running on Linux
+if [[ "$(uname)" == "Linux" ]]; then
+    if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    fi
+fi
