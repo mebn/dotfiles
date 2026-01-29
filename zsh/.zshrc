@@ -115,3 +115,7 @@ if [[ "$(uname)" == "Linux" ]]; then
         eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fi
 fi
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+export PATH=/Users/mebn/.opencode/bin:$PATH
