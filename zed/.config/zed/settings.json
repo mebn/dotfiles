@@ -10,6 +10,10 @@
   "inlay_hints": {
     "enabled": true,
   },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+  },
   "diff_view_style": "unified",
   "toolbar": {
     "quick_actions": false,
