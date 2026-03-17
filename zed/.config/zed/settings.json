@@ -7,24 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "inlay_hints": {
+    "enabled": true,
+  },
   "diff_view_style": "unified",
   "toolbar": {
     "quick_actions": false,
     "agent_review": false,
     "selections_menu": true,
-    "breadcrumbs": true
+    "breadcrumbs": true,
   },
   "minimap": {
     "thumb": "always",
-    "show": "always"
-  },
-  "active_pane_modifiers": {
-    "inactive_opacity": 1.0
-  },
-  "use_system_window_tabs": false,
-  "tab_bar": {
-    "show_tab_bar_buttons": true,
-    "show": true
+    "show": "always",
   },
   "title_bar": {
     "show_user_picture": true,
@@ -34,10 +29,10 @@
     "show_user_menu": true,
     "show_onboarding_banner": false,
     "show_project_items": true,
-    "show_branch_icon": false
+    "show_branch_icon": false,
   },
   "debugger": {
-    "button": false
+    "button": false,
   },
   "agent": {
     "button": false,
