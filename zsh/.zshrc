@@ -42,9 +42,6 @@ alias cdmc="cd ~/marcus/code/"
 alias cdmt="cd ~/marcus/temp/"
 alias cdms="cd ~/marcus/screenshots/"
 alias cdmo="cd ~/marcus/other/"
-## notes
-alias notes="v ~/marcus/notes/"
-alias n=notes
 ## neovim
 alias v="nvim"
 ## git
@@ -119,3 +116,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
 export PATH=/Users/mebn/.opencode/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
