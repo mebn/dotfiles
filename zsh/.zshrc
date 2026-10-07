@@ -64,6 +64,9 @@ alias feh="feh --scale-down"
 ## remove .DS_Store files (MacOS)
 alias rmds="find . -name \".DS_Store\" -delete"
 alias rmdsa="sudo find / -name \".DS_Store\" -depth -exec rm {} \;"
+## list listening ports, kill whatever is on a port: killport 8188
+alias ports="lsof -iTCP -sTCP:LISTEN -n -P"
+killport() { lsof -ti tcp:"$1" -sTCP:LISTEN | xargs kill; }
 
 # exports
 ## paths
