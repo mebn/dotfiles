@@ -53,7 +53,7 @@ alias gp="git push"
 alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
 ## other
-alias c="clear"
+alias c="claude"
 alias ls="ls --color"
 alias l="ls -la --color"
 alias cwd="pwd | tr -d '\n' | xclip -selection clipboard"
