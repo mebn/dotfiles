@@ -54,6 +54,7 @@ alias z="v ~/.zshrc"
 alias zs="source ~/.zshrc"
 ## other
 alias c="claude"
+alias h="herdr"
 alias ls="ls --color"
 alias l="ls -la --color"
 alias cwd="pwd | tr -d '\n' | xclip -selection clipboard"
@@ -102,6 +103,10 @@ export PHP_INI_SCAN_DIR="/Users/mebn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 # opencode
 export PATH=/home/marnil9/.opencode/bin:$PATH
 
+# docker
+alias dup="docker compose up -d"
+alias ddown="docker compose down"
+
 # sail
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 export PATH="$HOME/.composer/vendor/bin:$PATH"
@@ -119,6 +124,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
 export PATH=/Users/mebn/.opencode/bin:$PATH
+export PATH="$PATH:/snap/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
